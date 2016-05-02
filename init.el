@@ -1,4 +1,7 @@
-(setq load-path (cons "~/.emacs.d" load-path))
+; conf custom
+(setq load-path (cons "~/.emacs.d/lisp" load-path))
+
+(setq load-path (cons "~/.emacs.d/theme" load-path))
 
 (setq save-place-file "~/.emacs.d/saveplace")
 

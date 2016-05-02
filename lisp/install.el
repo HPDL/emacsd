@@ -31,6 +31,7 @@
 (package-install 'window-purpose)
 (package-install 'yasnippet)
 (package-install 'php-mode)
+(package-install '2048-game)
 
 
 
