@@ -1,1 +1,1 @@
-("~/.emacs.d/")
+("/work/tmk-wp/wp-content/themes/tmk/" "/work/tmk-wp/" "~/.emacs.d/")

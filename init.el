@@ -29,6 +29,8 @@
 
 (line-number-mode t)
 (column-number-mode t)
+(global-linum-mode t)
+
 (setq-default save-place t)
 
 (recentf-mode 1)
@@ -69,3 +71,21 @@
 (load "packages.el")
 
 (load "keybindings.el")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "#181818" :foreground "#ddd" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 101 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(col-highlight ((t (:background "black"))))
+ '(highlight-current-line-face ((t (:background "black")))))
+
+
+(set-face-background 'hl-line "#000000")
+(set-face-foreground 'highlight nil)

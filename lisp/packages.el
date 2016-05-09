@@ -2,8 +2,8 @@
 
 ;(require 'sr-speedbar)
 
-(require 'window-purpose)
-(purpose-mode)
+;(require 'window-purpose)
+;(purpose-mode)
 
 (require 'expand-line)
 (require 'expand-region)
@@ -17,19 +17,24 @@
 (ac-config-default)
 
 
-(require 'yasnippet)
-(yas-global-mode 1)
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
-(require 'projectile)
-(projectile-global-mode)
+;(require 'projectile)
+;(projectile-global-mode)
 
 (require '2048-game)
 
 
 (require 'multiple-cursors)
 
-(require 'php-mode)
-(add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
+(hl-line-mode)
+
+;(require 'crosshairs);
+;(crosshairs-mode)
+
+;(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -45,7 +50,7 @@
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 0)
-(setq web-mode-code-indent-offset 4)
+(setq web-mode-code-indent-offset 2)
 
 (setq web-mode-style-padding 0)
 (setq web-mode-script-padding 0)

@@ -32,6 +32,8 @@
 (package-install 'yasnippet)
 (package-install 'php-mode)
 (package-install '2048-game)
+(package-install 'column-marker)
+;(package-install 'crosshairs)
 
 
 

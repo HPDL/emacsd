@@ -8,6 +8,8 @@
 (global-set-key (kbd "C-+") 'er/contract-region)
 
 
+(global-set-key (kbd "<f12>") 'web-mode)
+
 
 ; undo-tree
 (global-unset-key "\C-z")
@@ -19,6 +21,12 @@
 (global-set-key (kbd "C-p") 'mc/mark-previous-like-this)
 (global-unset-key (kbd "C-<down-mouse-1>"))
 (global-set-key (kbd "C-<mouse-1>") 'mc/add-cursor-on-click)
+
+
+; column-marker
+(global-set-key (kbd "C-c C-&") 'column-marker-1)
+(global-set-key (kbd "C-c C-é") 'column-marker-2)
+(global-set-key (kbd "C-c C-\"") 'column-marker-3)
 
 
 ; general
