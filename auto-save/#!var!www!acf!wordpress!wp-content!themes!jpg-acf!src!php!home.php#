@@ -1,0 +1,25 @@
+<?php
+/*
+ * Template: page d'accueil
+ */
+use Timber\Timber;
+
+$context = Timber::get_context();
+print_r($context);$context['page'] = Timber::get_post();
+
+$context['posts'] = Timber::get_posts([
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'has_password' => false,
+    'exclude_from_search' => 'private',
+]);
+
+
+
+$context['temoignage'] = wp_kses_post(get_option('sc_temoignage_sur_home', ''));
+$context['scorecard_btn'] = sanitize_text_field(get_option('sc_scorecard_button', ''));
+$context['scorecard_url'] = get_permalink(intval(get_option('sc_scorecard_page', 0)));
+
+
+Timber::render('home.twig', $context);
+

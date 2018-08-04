@@ -1,0 +1,90 @@
+import { Injectable } from '@angular/core';
+
+import { Character } from "./character";
+
+
+import { Http, Response } from '@angular/http';
+import { Observable } from "rxjs/Observable";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/find';
+
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+import { environment } from './../environments/environment';
+
+
+@Injectable()
+export class GameService {
+
+	public characters$: BehaviorSubject<Array<Character>> = new BehaviorSubject([]);
+
+	public party: BehaviorSubject<Array<Character>> = new BehaviorSubject([]);
+	
+	constructor(private http: Http) {
+		this.fetchCharacters();
+	}
+
+	public getCharacters(): Observable<Array<Character>> {
+		return this.characters$;
+	}
+	
+	private httpError() {
+		return Observable.throw('http error');
+	}
+
+	public selectCharacter(character: Character) {
+// on s'assure que c'est un joueur valide
+		let char = this.characters$.getValue().filter(i => i.id === character.id)[0];
+
+		if (this.isSelected(char)) {
+			this.party.next(this.party.getValue().filter(i=> i.id !== char.id));
+		}
+		else {
+			this.party.next([...this.party.getValue(), Object.assign({}, char)]);
+		}
+	}
+
+	public isSelected(character: Character): boolean {
+		return !! this.party.getValue().find(i => i.id === character.id);
+	}
+	
+	private fetchCharacters() {
+		this.http
+			.get(environment.api)
+			.share()
+			.map((response: Response) => response.json())
+			.catch(this.httpError)
+				.subscribe(game
+ => this.characters$.next(game.characters));
+
+	}
+
+    public rollDice(dice: Array<number>): number {
+        let d = [...dice];
+        if (d.length %2 !== 0) {
+            d.push(1);
+        }
+
+        return d.reduce(function(carry, value, index, array) {
+            let rand = Math.random;
+            let ceil = Math.ceil;
+            let result: number = 0;
+            let num_dice: number = value;
+            let dice: number = array[index + 1];
+
+            
+            if (index % 2 === 0) {
+                for (let i = 0; i < num_dice; i++) {
+                    result += ceil( dice * rand());
+                }
+            }
+            
+            return carry + result;
+        }, 0);
+
+        
+    }
+}

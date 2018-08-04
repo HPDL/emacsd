@@ -1,0 +1,50 @@
+.temoignage-item {
+		border-top: 5px solid @gris;
+		padding: @grid-gutter-width 0 0;
+
+		& > h2 {
+				padding-top:0;
+				margin-top:0;
+		}
+
+		.temoignage {
+
+				& > p {
+						margin: 0 0 14px;
+				}
+		}
+
+}
+
+
+.temoignage-col-2 {
+		width: 100%;
+
+		@media (min-width: @container-tablet) {
+				width: floor((@container-tablet / 3 * 2));
+		}
+
+		@media (min-width: @container-desktop) {
+				width: floor((@container-desktop / 3 * 2));
+		}
+
+		@media (min-width: @container-large-desktop) {
+				width: floor((@container-large-desktop / 3 * 2));
+		}
+
+}
+
+.temoignage-format-big {
+		.temoignage {
+				font-weight: 800;
+				font-size:28px;
+		}
+}
+
+.temoignage-format-medium {
+		.temoignage {
+
+		}
+}
+
+

@@ -1,0 +1,13 @@
+/*
+* Quelques CSS pour l'admin
+*/
+
+.mce-i-encadre {
+		margin-top: -3px;
+
+		&:before {
+		content:'\25A3';
+		}
+}
+
+

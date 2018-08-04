@@ -1,0 +1,33 @@
+(function(window, document) {
+		var html = '<div id="p"> \
+ \
+<style type="text/css"> \
+#p { \
+overflow:hidden; \
+opacity:0; \
+max-height:0; \
+} \
+ \
+#p.show { \
+transition: opacity s, max-height 5s; \
+opacity: 1; \
+max-height:1000px; \
+} \
+ \
+</style> \
+<p> \
+<strong> \
+lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet \
+</strong> \
+</p> \
+</div>';
+
+document.write(html);
+window.onload = function() {
+		if (window.jQuery) {
+				var $ = window.jQuery;
+$('#p').addClass('show');
+		}
+};
+
+})(window, document);

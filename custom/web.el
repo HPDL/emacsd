@@ -1,32 +1,3 @@
-;(require 'codesearch)
-
-;(require 'sr-speedbar)
-
-(require 'window-purpose)
-(purpose-mode)
-
-(require 'expand-line)
-(require 'expand-region)
-
-(require 'undo-tree)
-(global-undo-tree-mode)
-
-
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-
-
-(require 'yasnippet)
-(yas-global-mode 1)
-
-(require 'projectile)
-(projectile-global-mode)
-
-(require '2048-game)
-
-
-(require 'multiple-cursors)
 
 (require 'php-mode)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))
@@ -53,8 +24,3 @@
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
-
-(add-hook 'local-write-file-hooks
-            (lambda ()
-               (delete-trailing-whitespace)
-               nil))

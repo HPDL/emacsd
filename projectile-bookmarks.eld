@@ -1,1 +1,1 @@
-("~/.emacs.d/")
+("~/.emacs.d/" "/var/www/acf/wordpress/wp-content/themes/jpg-acf/" "~/work/theme-greenpeace/" "/var/www/acf/wordpress/" "/var/www/acf/" "~/work/mamaslatinas/ml/" "~/work/" "~/work/tmk/bin/" "~/work/greenpeace-workflow/" "~/work/slimpay-proxy/" "~/work/universe/" "~/work/cake-calculator/" "~/work/universe-proxy/vendor/greenpeace/universe/" "~/work/universe-silex-provider/" "~/work/salesforce/" "~/work/universe-proxy/" "~/work/universe-client/" "~/work/mamaslatinas/mamas-latinas-plugin/" "~/work/mamaslatinas/mamas-latinas-theme/")
